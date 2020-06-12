@@ -1,23 +1,25 @@
-Dockerfiles are provided for setup the environment to compile the kernel source of MOXA UC series products.
+# moxa-dockerfiles
 
-# Steps
-## Prepare Dockcer environment
+moxa-dockerfiles provides the `dockerfile` for building develop environment to compile the kernel source, tools and libraries of Moxa Computer products.
 
-If having the docker installed, please skip this step.
+## Steps
 
-Please refer to [official site](https://docs.docker.com/install/)
+### Prepare docker environment
 
-## Prepare docker image
+To prepare your docker environment, please visit page [Get Docker](https://docs.docker.com/get-docker/) for more information.
 
-Execute following command to build the docker image
+### Build your docker image
 
-```
-$ cd stretch
-$ sudo docker build -t moxa_docker:v1 ./
-```
+Before starting build docker image, please make sure you have already under the directory which `dockerfile` located.
 
-After the docker build, the images should be ready to use. Check with
+Now we can start building docker image. For example, if we want build a docker image which named `moxa-package-builder` with tag `1.0.0`, execute following command:
 
 ```
-$ docker images moxa_docker
+$ sudo docker build -t moxa-package-builder:1.0.0 .
+```
+
+Once build process completed, you can check your docker image with following command:
+
+```
+$ sudo docker images moxa-package-builder
 ```
